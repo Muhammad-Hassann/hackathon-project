@@ -21,7 +21,7 @@ const About = () => {
         </p>
       </div>
     ))}
-    <Button  className="mt-4" />
+    <Button children='Read More'  className="mt-4" />
   </div>
 
   {/* Right section */}

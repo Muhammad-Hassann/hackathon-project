@@ -35,7 +35,7 @@ const Hero = () => {
     <p className="mt-4">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue
     </p>
-    <Button  className="mt-4" />
+    <Button children="See More" className="mt-4" />
   </div>
 
   {/* Right section */}
