@@ -78,8 +78,8 @@ const Header = () => {
                         </Link>
                     ))}
                     <div className="flex justify-center gap-6 mt-4">
-                        <FiSearch className="text-2xl font-bold cursor-pointer text-white" />
-                        <PiUser className="text-2xl font-bold cursor-pointer text-white" />
+                        <FiSearch  className="text-2xl font-bold cursor-pointer text-white" />
+                        <Link href='/signup'><PiUser className="text-2xl font-bold cursor-pointer text-white" /></Link>
                         <PiTote className="text-2xl font-bold cursor-pointer text-white" />
                     </div>
                 </div>
