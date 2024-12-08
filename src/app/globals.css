@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+::root,
+html,
+body {
+    overflow-x: hidden;
+}
+
 p {
     font-size: 14px;
     color: #C4C4C4;

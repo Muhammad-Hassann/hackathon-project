@@ -26,27 +26,32 @@ const Chefs = () => {
   ];
 
   return (
-    <div className="w-full px-64 pb-20 ">
+    <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32 py-10">
+      {/* Section Heading */}
       <div className='py-4'>
-      <h2 className="text-primary-yellow font-great text-center text-2xl">Chefs</h2>
-    <h1 className="text-white text-center text-4xl font-bold ">
-      <span className="text-primary-yellow ">Me</span>et Our Chefs
-    </h1>
-    </div>
-      <div className='flex justify-between items-center gap-4 w-full my-6'>
-      {chefs.map((chef, index) => (
-        <ChefCard
-          key={index}
-          image={chef.image}
-          name={chef.name}
-          designation={chef.designation}
-        />
-      ))}
+        <h2 className="text-primary-yellow font-great text-center text-2xl">Chefs</h2>
+        <h1 className="text-white text-center text-4xl font-bold">
+          <span className="text-primary-yellow">Me</span>et Our Chefs
+        </h1>
       </div>
+
+      {/* Chef Cards */}
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+        {chefs.map((chef, index) => (
+          <ChefCard
+            key={index}
+            image={chef.image}
+            name={chef.name}
+            designation={chef.designation}
+          />
+        ))}
+      </div>
+
+      {/* Button */}
       <div className='flex justify-center items-center mt-8'>
-      <button className=" border border-primary-yellow text-white text-sm py-3 px-7 rounded-full ">
-        See More
-      </button>
+        <button className="border border-primary-yellow text-white text-sm py-3 px-7 rounded-full">
+          See More
+        </button>
       </div>
     </div>
   );

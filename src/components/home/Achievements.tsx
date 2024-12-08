@@ -10,7 +10,7 @@ const Acheivements = () => {
 
   return (
     <div
-      className="relative px-64 py-20 h-[500px] w-full bg-cover bg-center"
+      className="relative px-6 sm:px-16 md:px-32 lg:px-64 py-20 h-[500px] w-full bg-cover bg-center"
       style={{
         backgroundImage: `url('/images/achievments-bg.png')`,
       }}
@@ -20,11 +20,11 @@ const Acheivements = () => {
 
       {/* Content */}
       <div className="relative h-full flex items-center">
-        <div className="flex justify-between w-full">
+        <div className="flex flex-wrap justify-center gap-8 w-full">
           {cardData.map((card, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6"
+              className="flex flex-col items-center text-center p-6 w-full sm:w-1/2 md:w-1/4"
             >
               {/* Render the icon as an image */}
               <Image
@@ -35,7 +35,7 @@ const Acheivements = () => {
                 className="w-[120px] h-[120px] object-contain"
               />
               <h2 className="text-white text-xl font-bold mt-3">{card.text}</h2>
-              <span className=" text-3xl text-white font-semibold mt-2">{card.number}</span>
+              <span className="text-3xl text-white font-semibold mt-2">{card.number}</span>
             </div>
           ))}
         </div>
