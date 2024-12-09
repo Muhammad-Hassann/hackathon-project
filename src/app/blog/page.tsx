@@ -1,12 +1,23 @@
-import React from 'react'
-import Hero from './Hero'
-const BlogPage = () => {
+import React from "react";
+import Left from "./Blog-components/left";
+import Nav2 from "@/components/Nav2";
+import Header from "./header";
+import RightGrid from "./Blog-components/rightsection";
+
+function page() {
   return (
-    <div>
-      <Hero />
-      
-    </div>
-  )
+    <>
+      <Nav2 />
+      <Header />
+      <div className="bg-white flex ">
+        <Left />
+        <span className="hidden md:block lg:block">
+          {" "}
+          <RightGrid />
+        </span>
+      </div>
+    </>
+  );
 }
 
-export default BlogPage
+export default page;

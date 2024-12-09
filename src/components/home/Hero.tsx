@@ -4,7 +4,7 @@ import { FaFacebookF, FaPinterest, FaTwitter } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="w-full h-screen flex flex-col lg:flex-row justify-between items-center px-6 pt-28 lg:pt-0 lg:px-64 relative">
+    <div className="relative w-full h-screen flex flex-col lg:flex-row items-center justify-between px-6 pt-28 lg:pt-0 lg:px-64">
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-[url('/images/hero-bg.png')] bg-cover bg-bottom opacity-5"
@@ -26,7 +26,7 @@ const Hero = () => {
       </div>
 
       {/* Left section */}
-      <div className="w-full lg:w-1/2 text-center lg:text-left">
+      <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col justify-center items-center lg:items-start lg:justify-start">
         <h2 className="text-primary-yellow font-great text-lg lg:text-2xl">
           It&apos;s Quick &amp; Amusing
         </h2>
@@ -40,13 +40,13 @@ const Hero = () => {
       </div>
 
       {/* Right section */}
-      <div className="w-full hidden lg:flex lg:w-1/2  justify-center lg:justify-end mt-6 lg:mt-0">
+      <div className="w-full hidden md:flex items-center justify-center lg:justify-end mt-6 lg:mt-0">
         <Image
           src="/images/hero.png"
           alt="hero"
           width={500}
           height={500}
-          className="w-[70%] lg:w-auto"
+          className="w-[70%] md:w-[50%] lg:w-auto"
         />
       </div>
     </div>

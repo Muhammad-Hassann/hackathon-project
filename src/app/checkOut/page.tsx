@@ -1,115 +1,249 @@
-import React from 'react'
-import Image from 'next/image'
-import { FaCheck } from 'react-icons/fa6'
-import FoodCategory from '../foodcatagery/page'
+// cheakout page
+import Image from "next/image";
+import Nav2 from "@/components/Nav2";
+// import cheakout from "@/../../public/cheakout.png"
 
-
-
-function Hero() {
+export default function CheckoutPage() {
   return (
     <>
-    <section className='bg-black px-3 md:px-[135px] flex flex-col justify-evenly md:flex-row  md:items-center py-[50px]'>
-        {/* Heading */}
-        <div className='text-white w-full md:w-[50%]'>
-  <h1 className='md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font whitespace-nowrap'>
-    Its Quick & Amusing!
-  </h1>
+      <Nav2 />
+      <div className="container mx-auto px-4 my-10 ">
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Left Column - Forms */}
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-xl font-semibold mb-4">Shipping Address</h2>
+              <div className="grid gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="firstName"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      First name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="lastName"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Last name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    />
+                  </div>
+                </div>
 
-  <h1 className='text-[25px] md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal'>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Email address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Phone number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    />
+                  </div>
+                </div>
 
-    <span className='text-[#FF9F0D]'>Th</span>e Art of speed food Quality
-  </h1>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="company"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="country"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Country
+                    </label>
+                    <select
+                      id="country"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    >
+                      <option value="">Choose country</option>
+                      <option value="us">United States</option>
+                      <option value="uk">United Kingdom</option>
+                      <option value="ca">Canada</option>
+                    </select>
+                  </div>
+                </div>
 
-  <p className='text-[10px] md:text-[16px] font-normal'>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue
-  </p>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="city"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      City
+                    </label>
+                    <input
+                      type="text"
+                      id="city"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      placeholder="Choose city"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="zipCode"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Zip code
+                    </label>
+                    <input
+                      type="text"
+                      id="zipCode"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    />
+                  </div>
+                </div>
 
-  <div className='flex flex-col md:flex-row items-center md:items-start'>
+                <div>
+                  <label
+                    htmlFor="address1"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Address 1
+                  </label>
+                  <input
+                    type="text"
+                    id="address1"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
 
-  <button className='bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[190px] md:h-[60px] rounded-[40px] mt-[32px] hover:bg-yellow-800'>
-    See More
-  </button>
-  </div>
-</div>
+                <div>
+                  <label
+                    htmlFor="address2"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Address 2
+                  </label>
+                  <input
+                    type="text"
+                    id="address2"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
+              </div>
+            </div>
 
-        {/* Image */}
+            <div>
+              <h2 className="text-xl font-semibold mb-4">Billing Address</h2>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="sameAsShipping"
+                  className="h-4 w-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
+                />
+                <label
+                  htmlFor="sameAsShipping"
+                  className="text-sm text-gray-700"
+                >
+                  Same as shipping address
+                </label>
+              </div>
+            </div>
 
-        <div className='mt-[50px] md:mt-0 '>   
-            <Image 
-                src="/food.png"
-                alt='Hero Image'
-                width={700}
-                height={500}
-                className=''
-            />
+            <div className="flex justify-between pt-4">
+              <button className="py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 w-72 h-12 px-3">
+                Back to cart
+              </button>
+              <button className="px-6 py-2 bg-orange-500 text-white rounded-md shadow-sm text-sm font-medium hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 w-72 h-12">
+                Proceed to shipping
+              </button>
+            </div>
+          </div>
 
-        </div>
-    </section>
-        <section className="bg-black px-3 md:px-[135px] flex flex-col justify-evenly md:flex-row  md:items-center py-[50px]">
-      
+          {/* Right Column - Order Summary */}
+          <div className="my-20 p-6 rounded-lg border-2 border-gray-300">
+            <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+            <div className="space-y-4">
+              {[1, 2, 3].map((item) => (
+                <div key={item} className="flex items-center space-x-4">
+                  <div className="relative h-16 w-16">
+                    <Image
+                      src="/checkout.png"
+                      alt="Chicken Tikka Kebab"
+                      fill
+                      className="rounded-md object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-medium">Chicken Tikka Kebab</h3>
+                    <p className="text-sm text-gray-500">150 gm net</p>
+                    <p className="text-sm text-gray-500">50$</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-      {/* Image */}
+            <div className="mt-6 space-y-2 border-t pt-4">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-600">Subtotal</span>
+                <span className="font-medium">130$</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-600">Shipping</span>
+                <span className="font-medium">Free</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-600">Discount</span>
+                <span className="font-medium">25%</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-600">Tax</span>
+                <span className="font-medium">54.76$</span>
+              </div>
+              <div className="flex justify-between border-t pt-2">
+                <span className="font-semibold">Total</span>
+                <span className="font-semibold">{"432.65$"}</span>
+              </div>
+            </div>
 
-
-
-
-      {/* Heading */}
-      <div className="text-white w-full md:w-[50%]">
-        <h1 className="md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font whitespace-nowrap font-greatVibes">
-          About us
-        </h1>
-
-        <h1 className="text-[20px] md:text-[50px] font-bold whitespace-nowrap md:whitespace-normal">
-          <span className="text-[#FF9F0D]">We</span> Create the best foody
-          product
-        </h1>
-
-        <p className="text-[10px] md:text-[16px] font-normal">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-          pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-          augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis
-          sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in
-          consequat.
-        </p>
-
-        <ul>
-          <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
-            <span className="mr-[10px]">
-              <FaCheck />
-            </span>{" "}
-            Lacus nisi, et ac dapibus sit eu velit in consequat.
-          </li>
-          <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
-            <span className="mr-[10px]">
-              <FaCheck />
-            </span>{" "}
-            Quisque diam pellentesque bibendum non dui volutpat fringilla{" "}
-          </li>
-          <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
-            <span className="mr-[10px]">
-              <FaCheck />
-            </span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </li>
-        </ul>
-
-        <div className="flex flex-col md:flex-row items-center md:items-start">
-          <button className="bg-[#FF9F0D] text-white w-[100px] h-[30px] md:w-[190px] md:h-[60px] rounded-[40px] mt-[32px] hover:bg-yellow-800">
-            See More
-          </button>
+            <button className="w-full mt-6 px-6 py-3 bg-orange-500 text-white rounded-md shadow-sm text-sm font-medium hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+              Place an order
+            </button>
+          </div>
         </div>
       </div>
-      <div className="mt-[50px] md:mt-0 ">
-        <Image src="/about1.png" alt="Hero Image" className="" width={336} height={536} />
-        <div className="flex flex-col md:flex-row mt-[16px] md:mt-[0]">
-          <Image src="" alt="Hero Image" className="mr-[16px] pt-[40px]" />
-          <Image src="" alt="Hero Image" className="pt-[40px]" />
-        </div>
-      </div>
-    </section>
-    <FoodCategory/>
     </>
-  )
+  );
 }
-
-export default Hero

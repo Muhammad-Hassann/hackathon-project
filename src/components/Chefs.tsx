@@ -26,7 +26,7 @@ const Chefs = () => {
   ];
 
   return (
-    <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32 py-10">
+    <div className="w-full px-4 sm:px-8 md:px-16 lg:px-64 py-10">
       {/* Section Heading */}
       <div className='py-4'>
         <h2 className="text-primary-yellow font-great text-center text-2xl">Chefs</h2>
@@ -36,7 +36,7 @@ const Chefs = () => {
       </div>
 
       {/* Chef Cards */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+      <div className='flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-4'>
         {chefs.map((chef, index) => (
           <ChefCard
             key={index}

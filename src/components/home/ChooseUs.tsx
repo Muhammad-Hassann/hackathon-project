@@ -6,7 +6,7 @@ export default function WhyChooseUs() {
     <section className="container mx-auto px-4 py-12 lg:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Images Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 h-full">
+        <div className="hidden lg:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 h-full">
           {/* Top Left Large Image */}
           <div className="relative col-span-2 sm:col-span-2 md:col-span-2 row-span-2">
             <Image
@@ -103,15 +103,14 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-col items-center lg:flex-row gap-6 lg:gap-4 rounded-lg bg-white p-4 lg:w-[380px]">
-            <div className="w-2 h-28 rounded bg-[#FFA500]" />
-            <div className="w-full flex flex-col items-center lg:items-start">
-              <span className="text-primary-yellow text-5xl lg:text-6xl font-sans font-bold">
+          <div className="flex  items-center flex-row gap-6 lg:gap-4 rounded-lg bg-white p-4 w-full max-w-xs lg:max-w-[380px] mx-auto lg:mx-0">
+            <div className="w-2 h-20 lg:h-28 rounded bg-[#FFA500]" />
+            <div className="w-full flex flex-col items-center lg:items-start text-center lg:text-left">
+              <span className="text-primary-yellow text-4xl lg:text-6xl font-sans font-bold">
                 30+
               </span>
-              <h2 className="text-xl lg:text-2xl font-semibold text-center lg:text-left">
-                Years of
-                <br />
+              <h2 className="text-lg lg:text-2xl font-semibold">
+                Years of <br />
                 Experience
               </h2>
             </div>

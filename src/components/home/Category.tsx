@@ -35,7 +35,7 @@ const Category = () => {
           </h1>
           
           {/* Card Section */}
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
+          <div className="mt-10 w-full flex flex-col lg:justify-between items-center justify-center flex-wrap gap-4 lg:gap-0 md:flex-row">
             {categories.map((category, index) => (
               <CategoryCard
                 key={index}

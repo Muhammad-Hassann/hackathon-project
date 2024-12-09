@@ -1,14 +1,14 @@
 import React from "react";
-import Navbar from "@/components/Nav2";
-import Header from "./components/header";
+import Nav2 from "@/components/Nav2";
 import Body from "./components/body";
+import Header from "./components/header";
 
 function page() {
   return (
     <>
-      <Navbar />
-      <Header />
-      <div className="bg-white w-full py-10 px-5">
+          <Nav2 />
+          <Header />
+      <div className="w-full bg-white">
         <Body />
       </div>
     </>

@@ -18,7 +18,7 @@ const CategoryCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`group relative w-full sm:w-72 md:w-80 lg:w-96 h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden rounded-lg shadow-lg ${className}`}
+      className={`group relative w-64  h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden rounded-lg shadow-lg ${className}`}
     >
       {/* Image */}
       <Image

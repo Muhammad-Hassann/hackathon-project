@@ -1,13 +1,28 @@
-'use client';
-
-import React, { useState } from 'react';
+"use client"; // pages/shopping-cart.tsx
+import Image from "next/image";
+import React, { useState } from "react";
 
 const initialCartItems = [
-  { name: "Burger", price: 10.99, quantity: 2, image: "/cart1.png" },
-  { name: "Fresh Lime", price: 3.49, quantity: 1, image: "/cart2.png" },
-  { name: "Pizza", price: 9.99, quantity: 4, image: "/cart3.png" },
-  { name: "Chocolate Muffin", price: 4.49, quantity: 1, image: "/cart4.png" },
-  { name: "Cheese Butter", price: 11.99, quantity: 3, image: "/cart5.png" },
+  { name: "Burger", price: 10.99, quantity: 2, image: "/product_img.svg" },
+  {
+    name: "Fresh Lime",
+    price: 3.49,
+    quantity: 1,
+    image: "/product_img.svg",
+  },
+  { name: "Pizza", price: 9.99, quantity: 4, image: "/product_img.svg" },
+  {
+    name: "Chocolate Muffin",
+    price: 4.49,
+    quantity: 1,
+    image: "/product_img.svg",
+  },
+  {
+    name: "Cheese Butter",
+    price: 11.99,
+    quantity: 3,
+    image: "/product_img.svg",
+  },
 ];
 
 const ShoppingCart: React.FC = () => {
@@ -34,53 +49,69 @@ const ShoppingCart: React.FC = () => {
     }
   };
 
-  const cartSubtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const cartSubtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
   const shippingCharges = 30.0;
   const totalAmount = cartSubtotal - cartSubtotal * discount + shippingCharges;
 
   return (
     <div className="bg-white font-sans">
-      <header className="bg-cover bg-center h-48 flex items-center justify-center" style={{ backgroundImage: 'url(/path/to/header-bg.jpg)' }}>
-        <h1 className="text-5xl font-bold text-white tracking-wide">Shopping Cart</h1>
-      </header>
       <main className="py-12 px-6 md:px-16 lg:px-28">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="p-4 font-semibold">Product</th>
-              <th className="p-4 font-semibold">Price</th>
-              <th className="p-4 font-semibold">Quantity</th>
-              <th className="p-4 font-semibold">Total</th>
-              <th className="p-4 font-semibold">Remove</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cartItems.map((item, index) => (
-              <tr key={index} className="border-b">
-                <td className="p-4 flex items-center">
-                  <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded mr-4" />
-                  <span>{item.name}</span>
-                </td>
-                <td className="p-4">${item.price.toFixed(2)}</td>
-                <td className="p-4">
-                  <input
-                    type="number"
-                    value={item.quantity}
-                    onChange={(e) => handleQuantityChange(index, parseInt(e.target.value) || 0)}
-                    className="w-16 border rounded px-2 py-1 text-center"
-                    min="0"
-                  />
-                </td>
-                <td className="p-4">${(item.price * item.quantity).toFixed(2)}</td>
-                <td className="p-4 text-red-500 cursor-pointer" onClick={() => handleRemoveItem(index)}>
-                  &times;
-                </td>
+        {/* Cart Table */}
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-gray-100 text-left">
+                <th className="p-4 font-semibold">Product</th>
+                <th className="p-4 font-semibold">Price</th>
+                <th className="p-4 font-semibold">Quantity</th>
+                <th className="p-4 font-semibold">Total</th>
+                <th className="p-4 font-semibold">Remove</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {cartItems.map((item, index) => (
+                <tr key={index} className="border-b">
+                  <td className="p-4 flex items-center">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      className="w-16 h-16 object-cover rounded mr-4"
+                      width={64}
+                      height={64}
+                    />
+                    <span>{item.name}</span>
+                  </td>
+                  <td className="p-4">${item.price.toFixed(2)}</td>
+                  <td className="p-4">
+                    <input
+                      type="number"
+                      value={item.quantity}
+                      onChange={(e) =>
+                        handleQuantityChange(index, parseInt(e.target.value) || 0)
+                      }
+                      className="w-16 border rounded px-2 py-1 text-center"
+                      min="0"
+                    />
+                  </td>
+                  <td className="p-4">${(item.price * item.quantity).toFixed(2)}</td>
+                  <td
+                    className="p-4 text-red-500 cursor-pointer"
+                    onClick={() => handleRemoveItem(index)}
+                  >
+                    &times;
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
+        {/* Coupon and Total Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mt-10">
+          {/* Coupon Code Section */}
           <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
             <h2 className="text-lg font-semibold mb-2">Coupon Code</h2>
             <div className="flex items-center">
@@ -100,6 +131,7 @@ const ShoppingCart: React.FC = () => {
             </div>
           </div>
 
+          {/* Total Amount Section */}
           <div className="w-full lg:w-1/3">
             <div className="bg-gray-100 p-6 rounded-lg">
               <div className="flex justify-between mb-4">

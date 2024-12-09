@@ -9,7 +9,7 @@ const RestaurantCard = () => {
       }}
     >
       {/* Right Content */}
-      <div className="ml-auto w-full sm:w-3/4 md:w-1/2 flex flex-col items-end text-right text-white space-y-4">
+      <div className="ml-auto w-full sm:w-3/4 md:w-1/2 flex flex-col items-end text-center lg:text-right text-white space-y-4">
         {/* Section Heading */}
         <h2 className="text-primary-yellow font-great text-2xl sm:text-3xl lg:text-4xl">
           Restaurant Active Process
