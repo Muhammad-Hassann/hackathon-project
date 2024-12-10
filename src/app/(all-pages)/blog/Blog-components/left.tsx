@@ -60,7 +60,7 @@ const BlogPostPage = () => {
         "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     },
     {
-      imageSrc: "/images/blog2.png",
+      imageSrc: "/images/blog1.png",
       date: "Feb 14, 2022",
       comments: 3,
       author: "Admin",
@@ -69,7 +69,7 @@ const BlogPostPage = () => {
         "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     },
     {
-      imageSrc: "/images/about3.png",
+      imageSrc: "/images/blog1.png",
       date: "Feb 14, 2022",
       comments: 3,
       author: "Admin",
@@ -78,7 +78,7 @@ const BlogPostPage = () => {
         "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     },
     {
-      imageSrc: "/images/blog3.png",
+      imageSrc: "/images/blog1.png",
       date: "Feb 14, 2022",
       comments: 3,
       author: "Admin",
