@@ -1,8 +1,8 @@
 import React from "react";
-import Left from "./Blog-components/left.jsx";
 import Nav2 from "@/components/Nav2";
 import Header from "./header";
 import RightGrid from "./Blog-components/rightsection";
+import BlogPostPage from "./Blog-components/left";
 
 function page() {
   return (
@@ -11,7 +11,7 @@ function page() {
   secondLinkText="Blog"
   secondLinkHref="/blog"/>
       <div className="bg-white flex ">
-        <Left />
+        <BlogPostPage />
         <span className="hidden md:block lg:block">
           {" "}
           <RightGrid />
