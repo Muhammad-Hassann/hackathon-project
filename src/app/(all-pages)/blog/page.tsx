@@ -11,7 +11,7 @@ function page() {
   secondLinkText="Blog"
   secondLinkHref="/blog"/>
       <div className="bg-white flex ">
-        <div className="w-[60%]">
+        <div className="w-full lg:w-[60%] px-4 lg:px-0">
         <BlogPostPage />
         </div>
         <span className="hidden md:block lg:block w-[40%]">
