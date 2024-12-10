@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0D0D0D] text-white">
-      <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-32 py-12">
+      <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-64 py-12">
         {/* Newsletter Section */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">
@@ -52,7 +52,7 @@ export default function Footer() {
               Corporate clients and leisure travelers have been relying on Groundlink for dependable safe, and professional chauffeured car service in major cities across the World.
             </p>
             <div className="flex items-start">
-              <div className="bg-[#FF9F0D] p-2 rounded mr-4 w-[77.23px] h-[70.79px]">
+              <div className="bg-[#FF9F0D] flex items-center justify-center p-2 rounded mr-4 w-[77.23px] h-[70.79px]">
                 <Clock className="text-white" />
               </div>
               <div>
@@ -107,7 +107,8 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom Section */}
-        <div className="bg-primary-yellow py-6 px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center">
+        </div>
+        <div className="bg-primary-yellow py-6 px-4 md:px-24 lg:px-64 flex flex-col md:flex-row justify-between items-center">
           <p className="text-[16px] text-white leading-6 mb-4 md:mb-0">
             Copyright © 2022 by Ayeman. All Rights Reserved.
           </p>
@@ -122,7 +123,6 @@ export default function Footer() {
               </a>
             ))}
           </div>
-        </div>
       </div>
     </footer>
   );

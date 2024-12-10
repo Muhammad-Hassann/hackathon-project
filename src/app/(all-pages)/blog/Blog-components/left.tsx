@@ -51,7 +51,7 @@ const BlogPost = ({
 const BlogPostPage = () => {
   const blogPosts = [
     {
-      imageSrc: "/b-1.svg",
+      imageSrc: "/images/blog1.png",
       date: "Feb 14, 2022",
       comments: 3,
       author: "Admin",
@@ -60,7 +60,7 @@ const BlogPostPage = () => {
         "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     },
     {
-      imageSrc: "/b-1.svg",
+      imageSrc: "/images/blog2.png",
       date: "Feb 14, 2022",
       comments: 3,
       author: "Admin",
@@ -69,7 +69,7 @@ const BlogPostPage = () => {
         "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     },
     {
-      imageSrc: "/b-1.svg",
+      imageSrc: "/images/about3.png",
       date: "Feb 14, 2022",
       comments: 3,
       author: "Admin",
@@ -78,7 +78,7 @@ const BlogPostPage = () => {
         "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     },
     {
-      imageSrc: "/b-1.svg",
+      imageSrc: "/images/blog3.png",
       date: "Feb 14, 2022",
       comments: 3,
       author: "Admin",

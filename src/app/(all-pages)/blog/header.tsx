@@ -30,7 +30,7 @@ const MenuSection = () => {
           aria-label="Breadcrumb navigation"
         >
           <Link href="/" passHref>
-            <span className="text-orange-500 hover:underline">Home</span>
+            <span className="text-primary-yellow hover:underline">Home</span>
           </Link>
           <span className="mx-2">&gt;</span>
           <span>Blog</span>

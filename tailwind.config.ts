@@ -19,6 +19,7 @@ const config: Config = {
         "secondary": "#AF872F",
         "secondary-black": "#0D0D0D",
         "textColor": "#333333",
+        
       },
       fontFamily: {
         'sans': ["Helvetica", "sans-serif"],
