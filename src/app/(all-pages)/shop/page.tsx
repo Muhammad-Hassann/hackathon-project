@@ -7,7 +7,11 @@ import Nav2 from "@/components/Nav2";
 function Page() {
   return (
     <>
-      <Nav2 />
+      <Nav2 
+        heading="Shop"
+        secondLinkText="Shop"
+        secondLinkHref="/shop"
+      />
       <Header />
       <div className="bg-white py-10">
         <div className="container mx-auto flex flex-col lg:flex-row gap-6">

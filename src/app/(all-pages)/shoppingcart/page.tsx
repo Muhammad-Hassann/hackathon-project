@@ -6,7 +6,11 @@ import Header from "./components/header";
 function page() {
   return (
     <>
-          <Nav2 />
+          <Nav2 
+          heading="Shopping Cart"
+          secondLinkText="Cart"
+          secondLinkHref="/cart"
+          />
           <Header />
       <div className="w-full bg-white">
         <Body />

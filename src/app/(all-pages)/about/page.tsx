@@ -6,8 +6,9 @@ import Body from "./components/body";
 function page() {
   return (
     <>
-      <Navbar />
-      <Header />
+      <Navbar heading="About"
+        secondLinkText="About"
+        secondLinkHref="/about" />
       <div className="bg-white w-full py-10 px-5">
         <Body />
       </div>

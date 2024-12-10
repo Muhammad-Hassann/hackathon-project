@@ -46,8 +46,11 @@ const ProductDetail = () => {
 
   return (
     <>
-      <Navbar />
-      <Header />
+      <Navbar 
+        heading="Product Detail"
+        secondLinkText="Product Detail"
+        secondLinkHref="/productdetail"
+      />
       <section className="p-6 md:p-10 bg-white">
         {/* Breadcrumb */}
         <div className="text-sm text-gray-600 mb-4">

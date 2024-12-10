@@ -6,7 +6,11 @@ import Nav2 from "@/components/Nav2";
 export default function CheckoutPage() {
   return (
     <>
-      <Nav2 />
+      <Nav2 
+      heading="Checkout"
+      secondLinkText="Checkout"
+      secondLinkHref="/checkout"
+      />
       <div className="container mx-auto px-4 my-10 ">
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Left Column - Forms */}
