@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link";
+import { useState } from "react";
 
 // Define the types for the data structure
 interface MenuItem {
@@ -57,6 +59,11 @@ const FoodMenu = () => {
     ],
   };
 
+  // State to track selected category
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    menuData.categories[0]
+  );
+
   const { categories, items } = menuData;
 
   return (
@@ -70,41 +77,37 @@ const FoodMenu = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center space-x-6 mb-8 border-b border-gray-200 w-full ">
+      <div className="flex flex-wrap justify-center gap-4 mb-8 border-b border-gray-200 w-full">
         {categories.map((category, index) => (
-          <Link
-            href={`/food-menu?category=${category}`}
+          <span
             key={index}
-            legacyBehavior
+            onClick={() => setSelectedCategory(category)}
+            className={`pb-2 cursor-pointer transition-colors duration-300 whitespace-nowrap ${
+              selectedCategory === category
+                ? "text-primary-yellow border-b-2 border-primary-yellow"
+                : "text-gray-500 hover:text-primary-yellow"
+            }`}
           >
-            <span
-              className={`pb-2 ${
-                category === "Breakfast"
-                  ? "text-orange-500 border-b-2 border-orange-500"
-                  : "text-gray-500 hover:text-orange-500"
-              }`}
-            >
-              {category}
-            </span>
-          </Link>
+            {category}
+          </span>
         ))}
       </div>
 
-      {/* Menu Items Grid - 2x4 layout with width w-1/2 */}
-      <div className="grid grid-cols-2 gap-6">
+      {/* Menu Items Grid - Responsive layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {items.map((item, index) => (
           <div
             key={index}
-            className="w-full flex justify-between items-center border-b border-gray-200 pb-4"
+            className="w-full flex justify-between items-center cursor-pointer border-b border-gray-200 pb-4"
           >
             <div>
-              <h3 className="text-lg font-semibold text-orange-500">
+              <h3 className="text-lg font-semibold hover:text-primary-yellow">
                 {item.name}
               </h3>
               <p className="text-gray-500">{item.description}</p>
               <span className="text-sm text-gray-400">{item.calories}</span>
             </div>
-            <div className="text-lg font-bold">{item.price}</div>
+            <div className="text-lg font-bold text-primary-yellow">{item.price}</div>
           </div>
         ))}
       </div>
@@ -112,7 +115,7 @@ const FoodMenu = () => {
       {/* View More Button */}
       <div className="text-center mt-8">
         <Link href="/full-menu" legacyBehavior>
-          <span className="px-6 py-2 border border-orange-500 text-orange-500 rounded hover:bg-orange-500 hover:text-white transition duration-300">
+          <span className="px-6 py-2 border border-primary-yellow text-primary-yellow rounded hover:bg-primary-yellow hover:text-white transition duration-300">
             View Full Menu
           </span>
         </Link>

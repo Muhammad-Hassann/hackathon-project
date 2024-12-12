@@ -3,14 +3,14 @@ import BDiet from "./balanceddiet";
 import WCU from "./ChooseUs";
 import TS from "./teamSection";
 import Menu from "./menu";
-import TestimonialSection from "./testimonial";
+import Testimonial from "@/components/Testimonial";
 function body() {
   return (
     <>
       <BDiet />
       <WCU />
       <TS />
-      <TestimonialSection />
+      <Testimonial textColor='text-black' />
       <Menu/>
     </>
   );

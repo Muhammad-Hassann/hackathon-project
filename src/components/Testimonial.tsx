@@ -8,7 +8,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const Testimonial = () => {
+const Testimonial = ({textColor}: any) => {
   const testimonials = [
     {
       name: "John Doe",
@@ -40,7 +40,7 @@ const Testimonial = () => {
           <h2 className="text-primary-yellow font-great text-xl md:text-2xl">
             Testimonials
           </h2>
-          <h1 className="text-white text-2xl md:text-4xl font-bold mb-6">
+          <h1 className={`${textColor || 'text-white'} text-2xl md:text-4xl font-bold mb-6`}>
             What our clients are saying
           </h1>
         </div>

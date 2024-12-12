@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "@/components/Nav2";
-import Header from "./components/header";
 import Body from "./components/body";
 
 function page() {
@@ -9,7 +8,7 @@ function page() {
       <Navbar heading="About"
         secondLinkText="About"
         secondLinkHref="/about" />
-      <div className="bg-white w-full py-10 px-5">
+      <div className="bg-white w-full py-10">
         <Body />
       </div>
     </>

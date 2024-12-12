@@ -7,46 +7,47 @@ const TeamSection = () => {
     {
       name: "Mark Henry",
       role: "Owner",
-      imgSrc: "/ts-p.png", // Updated image source for all members
+      imgSrc: "/images/team.png",
     },
     {
       name: "Lucky Helen",
       role: "Chef",
-      imgSrc: "/ts-p.png", // Updated image source for all members
+      imgSrc: "/images/team.png",
     },
     {
       name: "Moon Henry",
       role: "Founder",
-      imgSrc: "/ts-p.png", // Updated image source for all members
+      imgSrc: "/images/team.png",
     },
     {
       name: "Tom Morrow",
       role: "Specialist",
-      imgSrc: "/ts-p.png", // Updated image source for all members
+      imgSrc: "/images/team.png",
     },
   ];
 
   return (
-    <div className="relative">
-      {/* Background Section: Yellow box with background image */}
-      <div className="absolute inset-0 z-0 h-1/2 bg-yellow-500 about-bg-opacity-90">
-        <div className="relative w-full h-full">
-          <Image
-            src="/bg-ts.svg" // Background image inside the yellow box
-            alt="Background"
-            layout="fill"
-            objectFit="cover"
-            className="absolute top-0 left-0 w-full h-full"
-          />
-        </div>
+    <div className="relative min-h-screen">
+      {/* Background Section */}
+      <div className="absolute inset-0 h-[450px]">
+        {/* Background Image */}
+        <Image
+          src="/images/choose-bg.png" // Background image
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+        />
+        {/* Yellow Overlay */}
+        <div className="absolute inset-0 bg-primary-yellow bg-opacity-90 z-10"></div>
       </div>
 
       {/* Content Section */}
-      <div className="relative z-10 py-16">
+      <div className="relative z-20 py-16">
         {/* Header */}
         <div className="text-center text-white mb-12">
           <h2 className="text-4xl font-bold">Team Member</h2>
-          <p className="mt-4 text-lg">
+          <p className="mt-4 text-gray-200 mx-auto text-center text-lg max-w-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed
             pharetra dictum neque massa congue.
           </p>
