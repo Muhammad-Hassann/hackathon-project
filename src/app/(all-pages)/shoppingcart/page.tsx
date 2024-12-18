@@ -1,7 +1,6 @@
 import React from "react";
 import Nav2 from "@/components/Nav2";
 import Body from "./components/body";
-import Header from "./components/header";
 
 function page() {
   return (
@@ -11,7 +10,6 @@ function page() {
           secondLinkText="Cart"
           secondLinkHref="/cart"
           />
-          <Header />
       <div className="w-full bg-white">
         <Body />
       </div>

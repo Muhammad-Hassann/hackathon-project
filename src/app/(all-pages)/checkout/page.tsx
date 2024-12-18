@@ -1,17 +1,19 @@
-// cheakout page
+'use client'
 import Image from "next/image";
 import Nav2 from "@/components/Nav2";
-// import cheakout from "@/../../public/cheakout.png"
+import Input from "@/components/Input";
+import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
+  const router = useRouter();
   return (
     <>
-      <Nav2 
-      heading="Checkout"
-      secondLinkText="Checkout"
-      secondLinkHref="/checkout"
+      <Nav2
+        heading="Checkout"
+        secondLinkText="Checkout"
+        secondLinkHref="/checkout"
       />
-      <div className="container mx-auto px-4 my-10 ">
+      <div className="container mx-auto px-4 md:px-16 lg:px-32 my-10 ">
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Left Column - Forms */}
           <div className="space-y-6">
@@ -20,75 +22,25 @@ export default function CheckoutPage() {
               <div className="grid gap-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label
-                      htmlFor="firstName"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      First name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
+                    <Input type="text" label="First name" />
                   </div>
                   <div>
-                    <label
-                      htmlFor="lastName"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Last name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
+                    <Input type="text" label="Last name" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Email address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
+                    <Input type="email" label="Email address" />
                   </div>
                   <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Phone number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
+                    <Input type="text" label="Phone number" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label
-                      htmlFor="company"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
+                    <Input type="text" label="Company" />
                   </div>
                   <div>
                     <label
@@ -99,7 +51,7 @@ export default function CheckoutPage() {
                     </label>
                     <select
                       id="country"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm "
                     >
                       <option value="">Choose country</option>
                       <option value="us">United States</option>
@@ -111,60 +63,19 @@ export default function CheckoutPage() {
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label
-                      htmlFor="city"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      City
-                    </label>
-                    <input
-                      type="text"
-                      id="city"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                      placeholder="Choose city"
-                    />
+                    <Input label="City" type="text" />
                   </div>
                   <div>
-                    <label
-                      htmlFor="zipCode"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Zip code
-                    </label>
-                    <input
-                      type="text"
-                      id="zipCode"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    />
+                    <Input label="Zip Code" type="text" />
                   </div>
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="address1"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Address 1
-                  </label>
-                  <input
-                    type="text"
-                    id="address1"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  />
+                  <Input type="text" label="Address 1" />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="address2"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Address 2
-                  </label>
-                  <input
-                    type="text"
-                    id="address2"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  />
+                  <Input type="text" label="Address 2" />
                 </div>
               </div>
             </div>
@@ -175,7 +86,7 @@ export default function CheckoutPage() {
                 <input
                   type="checkbox"
                   id="sameAsShipping"
-                  className="h-4 w-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
+                  className="h-4 w-4 rounded border-gray-300 text-primary-yellow"
                 />
                 <label
                   htmlFor="sameAsShipping"
@@ -186,11 +97,14 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            <div className="flex justify-between pt-4">
-              <button className="py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 w-72 h-12 px-3">
+            <div className="flex flex-col lg:flex-row justify-between pt-4">
+              <button
+                onClick={() => router.back()}
+                className="py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 w-72 h-12 px-3"
+              >
                 Back to cart
               </button>
-              <button className="px-6 py-2 bg-orange-500 text-white rounded-md shadow-sm text-sm font-medium hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 w-72 h-12">
+              <button className="px-6 py-2 bg-primary-yellow text-white rounded-md shadow-sm text-sm font-medium w-72 h-12">
                 Proceed to shipping
               </button>
             </div>
@@ -204,7 +118,7 @@ export default function CheckoutPage() {
                 <div key={item} className="flex items-center space-x-4">
                   <div className="relative h-16 w-16">
                     <Image
-                      src="/checkout.png"
+                      src="/images/checkout.png"
                       alt="Chicken Tikka Kebab"
                       fill
                       className="rounded-md object-cover"
@@ -242,7 +156,7 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            <button className="w-full mt-6 px-6 py-3 bg-orange-500 text-white rounded-md shadow-sm text-sm font-medium hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+            <button className="w-full mt-6 px-6 py-3 bg-primary-yellow text-white rounded-md shadow-sm text-sm font-medium">
               Place an order
             </button>
           </div>

@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import { PiUser, PiTote } from "react-icons/pi";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi"; // Mobile menu icons
 import Link from 'next/link';
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from 'react';
 
 const Header = () => {
@@ -17,6 +17,7 @@ const Header = () => {
         { label: "Contact", href: "/contact" },
     ];
     const pathname = usePathname();
+    const router = useRouter()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
@@ -47,8 +48,8 @@ const Header = () => {
                 <div className="flex items-center gap-4">
                     <div className="hidden md:flex gap-4">
                         <FiSearch className="text-2xl font-bold cursor-pointer" />
-                        <PiUser className="text-2xl font-bold cursor-pointer" />
-                        <PiTote className="text-2xl font-bold cursor-pointer" />
+                        <PiUser onClick={() => router.push('/signup')} className="text-2xl font-bold cursor-pointer text-white" />
+                        <PiTote onClick={() => router.push('/shoppingcart')} className="text-2xl font-bold cursor-pointer text-white" />
                     </div>
 
                     {/* Mobile Menu Toggle */}
@@ -78,9 +79,9 @@ const Header = () => {
                         </Link>
                     ))}
                     <div className="flex justify-center gap-6 mt-4">
-                        <FiSearch  className="text-2xl font-bold cursor-pointer text-white" />
-                        <Link href='/signup'><PiUser className="text-2xl font-bold cursor-pointer text-white" /></Link>
-                        <PiTote className="text-2xl font-bold cursor-pointer text-white" />
+                        <FiSearch className="text-2xl font-bold cursor-pointer text-white" />
+                        <PiUser onClick={() => router.push('/signup')} className="text-2xl font-bold cursor-pointer text-white" />
+                        <PiTote onClick={() => router.push('/shoppingcart')} className="text-2xl font-bold cursor-pointer text-white" />
                     </div>
                 </div>
             )}

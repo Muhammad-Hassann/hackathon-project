@@ -1,5 +1,5 @@
 import React from "react";
-import LeftGrid from "./components/leftgrid";
+import LeftGrid from "./components/ProductGrid";
 import RightGrid from "./components/rightsection";
 import Nav2 from "@/components/Nav2";
 
