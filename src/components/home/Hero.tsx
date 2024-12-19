@@ -11,7 +11,7 @@ const Hero = () => {
       ></div>
 
       {/* Decorative line with icons */}
-      <div className="hidden lg:flex absolute left-10 xl:left-44 top-1/2 h-[500px] -translate-y-1/2 flex-col items-center gap-6">
+      <div className="flex absolute left-6 lg:left-44 top-1/2 h-[500px] -translate-y-1/2 flex-col items-center gap-6">
         <div className="w-[1px] bg-white h-1/3"></div>
         <span className="text-white z-10">
           <FaFacebookF className="text-white hover:text-primary-yellow" />
@@ -25,8 +25,9 @@ const Hero = () => {
         <div className="w-[2px] bg-white h-1/3"></div>
       </div>
 
+     <div className="flex justify-between pt-12 lg:pt-0 w-full items-center flex-col lg:flex-row">
       {/* Left section */}
-      <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col justify-center items-center lg:items-start lg:justify-start">
+      <div className="w-full lg:w-1/2 pl-12 lg:pl-0 text-left flex flex-col justify-center items-start lg:justify-start">
         <h2 className="text-primary-yellow font-great text-lg lg:text-2xl">
           It&apos;s Quick &amp; Amusing
         </h2>
@@ -40,15 +41,16 @@ const Hero = () => {
       </div>
 
       {/* Right section */}
-      <div className="w-full hidden md:flex items-center justify-center lg:justify-end mt-6 lg:mt-0">
+      <div className="w-full flex items-center justify-center lg:justify-end mt-6 lg:mt-0">
         <Image
           src="/images/hero.png"
           alt="hero"
-          width={500}
-          height={500}
+          width={600}
+          height={600}
           className="w-[70%] md:w-[50%] lg:w-auto"
         />
       </div>
+    </div>
     </div>
   );
 };
