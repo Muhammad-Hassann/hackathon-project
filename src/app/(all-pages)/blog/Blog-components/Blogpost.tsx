@@ -51,6 +51,7 @@ const BlogPostPage = () => {
           author={post.author}
           title={post.title}
           description={post.description}
+          link="/blog/single-blog"
         />
       ))}
     </div>

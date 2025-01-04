@@ -1,5 +1,7 @@
+'use client'
 import Image from 'next/image';
 import { FaRegComments, FaRegCalendarAlt, FaRegUser, FaArrowRight } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 const Blogcard = ({
   imageSrc,
@@ -8,6 +10,7 @@ const Blogcard = ({
   author,
   title,
   description,
+  link
 }: {
   imageSrc: string;
   date: string;
@@ -15,7 +18,9 @@ const Blogcard = ({
   author: string;
   title: string;
   description: string;
+  link: string;
 }) => {
+  const router = useRouter();
   return (
     <section className="bg-white mb-6 rounded-lg my-6 p-4 md:p-0 shadow-lg">
       {/* Image Section */}
@@ -43,7 +48,7 @@ const Blogcard = ({
         </div>
         <h1 className="text-lg sm:text-xl md:text-3xl font-bold mb-4">{title}</h1>
         <p className="text-gray-700 mb-6 text-sm sm:text-base">{description}</p>
-        <button className="px-5 py-2 text-sm text-primary-yellow border border-primary-yellow rounded hover:bg-primary-yellow hover:text-white transition">
+        <button onClick={() => router.push(link)} className="px-5 py-2 text-sm text-primary-yellow border border-primary-yellow rounded hover:bg-primary-yellow hover:text-white transition">
           Read More <FaArrowRight className="inline-block ml-2" />
         </button>
       </div>

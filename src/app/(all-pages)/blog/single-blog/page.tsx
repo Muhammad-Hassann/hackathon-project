@@ -1,16 +1,19 @@
 import Nav2 from "@/components/Nav2";
-import RightGrid from "./Blog-components/rightsection";
-import BlogPostPage from "./Blog-components/Blogpost";
+import RightGrid from "../Blog-components/rightsection";
+import SingleBlog from "./SingleBlog";
+import { MyPlugin } from "./some";
 
-function page() {
+export default function page() {
   return (
     <>
-      <Nav2 heading="Blog List"
+      <Nav2 heading="Blog Details"
   secondLinkText="Blog"
   secondLinkHref="/blog"/>
       <div className="bg-white flex ">
         <div className="w-full lg:w-[60%] px-4 lg:px-0">
-        <BlogPostPage />
+        <div className="">
+          <SingleBlog />
+        </div>
         </div>
         <span className="hidden md:block lg:block w-[40%]">
           {" "}
@@ -20,5 +23,3 @@ function page() {
     </>
   );
 }
-
-export default page;
