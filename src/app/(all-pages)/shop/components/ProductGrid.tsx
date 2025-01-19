@@ -1,20 +1,26 @@
 import ProductList from "@/components/ProductList";
+import client from "@/lib/sanityClient";
 import Image from "next/image";
-import React from "react";
+import React from "react"
 
 
-const ProductGrid = () => {
-  const products = [
-    { id: 1, name: "Fresh Lime", image: "/images/balance.png", price: "$3.00", oldPrice: "$5.00" , path: "/productdetail"},
-    { id: 2, name: "Chocolate Muffin", image: "/images/shop2.png", price: "$4.00", oldPrice: "$6.00" , path: "/productdetail"},
-    { id: 3, name: "Burger", image: "/images/choose4.png", price: "$10.00", oldPrice: "$12.00", path: "/productdetail" },
-    { id: 4, name: "Country Burger", image: "/images/shop4.png", price: "$8.00", oldPrice: "$10.00", path: "/productdetail" },
-    { id: 5, name: "Drink", image: "/images/shop6.png", price: "$2.00", oldPrice: "$3.00" , path: "/productdetail"},
-    { id: 6, name: "Pizza", image: "/images/shop7.png", price: "$12.00", oldPrice: "$15.00", path: "/productdetail" },
-    { id: 7, name: "Cheese Butter", image: "/images/shop5.png", price: "$5.00", oldPrice: "$7.00" , path: "/productdetail"},
-    { id: 8, name: "Sandwiches", image: "/images/about3.png", price: "$6.00", oldPrice: "$8.00" , path: "/productdetail"},
-    { id: 9, name: "Chicken Chop", image: "/images/shop2.png", price: "$9.00", oldPrice: "$12.00", path: "/productdetail" },
-  ];
+export const getData = async () => {
+  const data = client.fetch(`*[_type == "food"]{
+    name,
+    category,
+    price,
+    originalPrice,
+    tags,
+    "imageUrl": image.asset->url,
+    description,
+    available
+  }`)
+  return data
+};
+
+
+const ProductGrid = async () => {
+  const products = await getData()
 
   return (
     <section className="py-8  md:pl-16 lg:pl-32">
@@ -55,5 +61,4 @@ const ProductGrid = () => {
     </section>
   );
 };
-
 export default ProductGrid;

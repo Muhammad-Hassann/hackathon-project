@@ -1,7 +1,7 @@
 import Nav2 from "@/components/Nav2";
 import RightGrid from "../Blog-components/rightsection";
 import SingleBlog from "./SingleBlog";
-import { MyPlugin } from "./some";
+
 
 export default function page() {
   return (

@@ -10,10 +10,9 @@ const Header = () => {
     const navItems = [
         { label: "Home", href: "/" },
         { label: "Menu", href: "/menu" },
-        { label: "Blog", href: "/blog" },
-        { label: "Pages", href: "/pages" },
-        { label: "About", href: "/about" },
         { label: "Shop", href: "/shop" },
+        { label: "Blog", href: "/blog" },
+        { label: "About", href: "/about" },
         { label: "Contact", href: "/contact" },
     ];
     const pathname = usePathname();

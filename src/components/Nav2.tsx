@@ -19,7 +19,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ heading, secondLinkText, seco
           <Image
             src="/images/pages-bg.png" // Static background image
             alt="Decorative background representing menu"
-            fill // Correct prop for the latest Next.js
+            layout="fill"
             priority
             className="object-cover"
           />
