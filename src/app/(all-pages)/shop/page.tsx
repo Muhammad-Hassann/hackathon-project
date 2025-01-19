@@ -1,5 +1,5 @@
 import React from "react";
-import LeftGrid from "./components/ProductGrid";
+import ProductGrid from "./components/ProductGrid";
 import RightGrid from "./components/rightsection";
 import Nav2 from "@/components/Nav2";
 
@@ -15,7 +15,7 @@ function Page() {
         <div className=" flex flex-col lg:flex-row gap-4">
           {/* Left Section */}
           <div className="flex-1 w-full">
-            <LeftGrid />
+            <ProductGrid />
           </div>
 
           {/* Right Section */}

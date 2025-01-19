@@ -1,26 +1,41 @@
+'use client'
+import React, { useEffect, useState } from "react";
 import ProductList from "@/components/ProductList";
 import client from "@/lib/sanityClient";
-import Image from "next/image";
-import React from "react"
 
+const ProductGrid = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-export const getData = async () => {
-  const data = client.fetch(`*[_type == "food"]{
-    name,
-    category,
-    price,
-    originalPrice,
-    tags,
-    "imageUrl": image.asset->url,
-    description,
-    available
-  }`)
-  return data
-};
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await client.fetch(
+          `*[_type == "food"]{
+            name,
+            category,
+            price,
+            originalPrice,
+            tags,
+            "imageUrl": image.asset->url,
+            description,
+            available
+          }`
+        );
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchData();
+  }, []);
 
-const ProductGrid = async () => {
-  const products = await getData()
+  if (loading) {
+    return <div>Loading...</div>; // Optional loading placeholder
+  }
 
   return (
     <section className="py-8  md:pl-16 lg:pl-32">
@@ -48,7 +63,7 @@ const ProductGrid = async () => {
       </div>
 
       {/* Product Grid */}
-     <ProductList products={products} />
+      <ProductList products={products} />
 
       {/* Pagination */}
       <div className="flex justify-center mt-8">
@@ -61,4 +76,5 @@ const ProductGrid = async () => {
     </section>
   );
 };
+
 export default ProductGrid;
