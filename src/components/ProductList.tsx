@@ -1,55 +1,55 @@
-import Image from "next/image";
-import { PiHeart, PiTote } from "react-icons/pi";
-import { IoIosGitCompare } from "react-icons/io";
-import Link from "next/link";
-import { urlFor } from "@/lib/sanityClient";
+import type React from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { AiFillStar } from "react-icons/ai"
 
-const ProductList = ({ products }: any) => {
+interface Product {
+  _id: string
+  name: string
+  imageUrl: string
+  price: number
+  rating?: number
+  reviews?: number
+}
+
+interface ProductListProps {
+  products: Product[]
+}
+
+const ProductList: React.FC<ProductListProps> = ({ products }) => {
   return (
-    <div className="w-full flex flex-wrap flex-col lg:flex-row gap-4 items-center">
-      {products.map((product: any) => (
-        <Link href={`/productdetail/${product._id}`} key={product._id}>
-          <div className="relative w-[300px] shadow-sm hover:shadow-lg transition-all group">
-            {/* Product Image */}
-            <Image
-              src={product.imageUrl} // Dynamically generating the image URL
-              alt={product.name}
-              className="w-full h-80 object-cover object-center"
-              width={250}
-              height={300}
-            />
-            <div className="p-4">
-              {/* Product Name */}
-              <h3 className="text-lg font-bold text-gray-800">{product.name}</h3>
-              {/* Product Pricing */}
-              <div className="mt-2 flex items-center justify-between">
-                <span className="text-primary-yellow font-semibold">
-                  ${product.price}
-                </span>
-                {product.originalPrice && (
-                  <span className="text-gray-400 line-through">
-                    ${product.originalPrice}
-                  </span>
-                )}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {products.map((product) => (
+        <div key={product._id} className="bg-white rounded-lg shadow-md overflow-hidden">
+          <Image
+            src={product.imageUrl || "/placeholder.svg"}
+            alt={product.name}
+            width={300}
+            height={200}
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+            <p className="text-gray-600 mb-2">${product.price.toFixed(2)}</p>
+            <div className="flex items-center mb-2">
+              <div className="flex text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <AiFillStar key={i} className={i < (product.rating || 0) ? "text-yellow-400" : "text-gray-300"} />
+                ))}
               </div>
+              <span className="ml-2 text-gray-600">({product.reviews || 0} reviews)</span>
             </div>
-            {/* Hover Icons */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-              <span className="bg-white p-3 shadow-md hover:bg-primary-yellow transition">
-                <IoIosGitCompare className="text-primary-yellow hover:text-white" />
-              </span>
-              <span className="bg-white p-3 shadow-md hover:bg-primary-yellow transition">
-                <PiHeart className="text-primary-yellow hover:text-white" />
-              </span>
-              <span className="bg-white p-3 shadow-md hover:bg-primary-yellow transition">
-                <PiTote className="text-primary-yellow hover:text-white" />
-              </span>
-            </div>
+            <Link href={`/productdetail/${product._id}`}>
+              <button className="w-full bg-primary-yellow text-white py-2 px-4 rounded hover:bg-yellow-600 transition-colors">
+                View Product
+              </button>
+            </Link>
           </div>
-        </Link>
+        </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default ProductList;
+export default ProductList
+

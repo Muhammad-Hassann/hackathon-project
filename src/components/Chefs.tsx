@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from "react";
 import ChefCard from "./ChefCard";
 import client from "@/lib/sanityClient";
@@ -11,7 +11,8 @@ interface IChef {
   available: boolean;
 }
 
-const Chefs: React.FC = () => {
+
+const Chefs = () => {
   const [chefs, setChefs] = useState<IChef[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,14 +39,6 @@ const Chefs: React.FC = () => {
     fetchChefs();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="w-full text-center py-10">
-        <h2 className="text-primary-yellow font-bold text-xl">Loading Chefs...</h2>
-      </div>
-    );
-  }
-
   return (
     <div className="w-full px-4 sm:px-8 md:px-16 lg:px-64 py-10">
       {/* Section Heading */}
@@ -56,24 +49,39 @@ const Chefs: React.FC = () => {
         </h1>
       </div>
 
-      {/* Chef Cards */}
-      <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-4">
-        {chefs.map((chef, index) => (
-          <ChefCard
-            key={index}
-            image={chef.imageUrl}
-            name={chef.name}
-            designation={chef.position}
-          />
-        ))}
+      {/* Chef Cards or Skeleton Loader */}
+      {loading ? (
+        <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-4">
+        {Array(4)
+          .fill(null)
+          .map((_, index) => (
+            <div
+              key={index}
+              className="w-64 h-80 bg-gray-200 animate-pulse rounded-md"
+            ></div>
+          ))}
       </div>
+      ) : (
+        <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-4">
+          {chefs.map((chef, index) => (
+            <ChefCard
+              key={index}
+              image={chef.imageUrl}
+              name={chef.name}
+              designation={chef.position}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Button */}
-      <div className="flex justify-center items-center mt-8">
-        <button className="border border-primary-yellow text-white text-sm py-3 px-7 rounded-full">
-          See More
-        </button>
-      </div>
+      {!loading && (
+        <div className="flex justify-center items-center mt-8">
+          <button className="border border-primary-yellow text-white text-sm py-3 px-7 rounded-full">
+            See More
+          </button>
+        </div>
+      )}
     </div>
   );
 };
